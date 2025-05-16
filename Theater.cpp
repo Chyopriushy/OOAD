@@ -4,52 +4,31 @@
 
 
 #include "Theater.h"
-#include <vector>
 
-/**
- * Theater implementation
- */
+Theater::Theater() : row(0), column(0), theaterNumber(0){}
+
+Theater::Theater(int row, int column, int theaterNumber) : row(row), column(column), theaterNumber(theaterNumber){
+}
+
+Theater::~Theater() {
+}
 
 
-/**
- * @return Integer
- */
 int Theater::getRow() {
-    return 0;
+    return this -> row;
 }
 
 /**
  * @return Integer
  */
 int Theater::getColumn() {
-    return 0;
-}
-
-/**
- * @return vector<Seat>
- */
-std::vector<Seat> Theater::getSeatLayer() {
-    return {};
+    return this -> column;
 }
 
 /**
  * @return Integer
  */
 int Theater::getTheaterNumber() {
-    return 0;
+    return this -> theaterNumber;
 }
 
-/**
- * @param seatLayer
- * @return void
- */
-void Theater::setSeatLayer(std::vector<Seat> seatLayer) {
-    return ;
-}
-
-/**
- * @return vector<Seat>
- */
-std::vector<Seat> Theater::showAvailabeSeats() {
-    return {};
-}

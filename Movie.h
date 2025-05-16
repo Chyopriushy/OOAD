@@ -9,13 +9,13 @@
 #include <string>
 
 class Movie {
-public: 
-    
-std::string getTitle();
-    
-std::string getGenre();
-    
-int getDuration();
+public:
+    Movie();
+    Movie(std::string title, std::string genre, int duration);
+    ~Movie();
+    std::string getTitle();
+    std::string getGenre();
+    int getDuration();
 private: 
     std::string title;
     std::string genre;

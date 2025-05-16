@@ -11,17 +11,16 @@
 #include "Seat.h"
 
 class Reservation {
-public: 
-    
-int getReservationId();
-    
-Movie getReservedScreening();
-    
-Seat getReservedSeat();
+public:
+    Reservation(int reservationId, const Screening& reservedScreening, const Seat& reservedSeat);
+    ~Reservation();
+    int getReservationId() const;
+    const Screening& getReservedScreening() const;
+    const Seat& getReservedSeat() const;
 private: 
     int reservationId;
-    Screening reservedScreening;
-    Seat reservedSeat;
+    const Screening& reservedScreening;
+    const Seat& reservedSeat;
 };
 
 #endif //_RESERVATION_H

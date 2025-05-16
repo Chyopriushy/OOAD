@@ -7,18 +7,19 @@
 #define _SEAT_H
 
 class Seat {
-public: 
-    
-int getSeatNumber();
-    
-bool getIsReserved();
-    
+public:
+    Seat();
+    Seat(int seatRow, int seatCol);
+    ~Seat();
+    int getSeatRow();
+    int getSeatCol();
+    bool getIsReserved();
 /**
  * @param status
- */
-void setIsReserved(bool status);
+ */void setIsReserved(bool status);
 private: 
-    int seatNumber;
+    int seatRow;
+    int seatCol;
     bool isReserved;
 };
 

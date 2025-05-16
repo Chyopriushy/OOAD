@@ -4,39 +4,47 @@
 
 
 #include "User.h"
-#include <string>
+#include <iostream>
 
-/**
- * User implementation
- */
+User::User(std::string Id, int password, std::string name, int balance, bool isAdmin) {
+    this -> Id = Id;
+    this -> password = password;
+    this -> name = name;
+    this -> balance = balance;
+    this -> isAdmin = isAdmin;
+}
+
+User::~User(){
+
+}
 
 
 /**
  * @return String
  */
 std::string User::getName() {
-    return "";
+    return this -> name;
 }
 
 /**
  * @return String
  */
 std::string User::getID() {
-    return "";
+    return this -> Id;
 }
 
 /**
  * @return Integer
  */
 int User::getPassword() {
-    return 0;
+    return this -> password;
 }
 
 /**
  * @return Integer
  */
 int User::getBalance() {
-    return 0;
+    return this -> balance;
 }
 
 /**
@@ -44,15 +52,15 @@ int User::getBalance() {
  * @return void
  */
 void User::setName(std::string name) {
-    return;
+    this -> name = name;
 }
 
 /**
  * @param Id
  * @return void
  */
-void User::setID(std::string Id) {
-    return;
+void User::setID(int Id) {
+    this -> Id = Id;
 }
 
 /**
@@ -60,7 +68,7 @@ void User::setID(std::string Id) {
  * @return void
  */
 void User::setPassword(int password) {
-    return;
+    this -> password = password;
 }
 
 /**
@@ -68,64 +76,38 @@ void User::setPassword(int password) {
  * @return void
  */
 void User::setBalance(int balance) {
-    return;
+    this -> balance = balance;
 }
 
 /**
  * @return bool
  */
-bool User::login() {
-    return false;
-}
 
-/**
- * @return User
- */
-User User::registerAccount() {
-    return {};
-}
+
 
 /**
  * @return vector<Reservation>
  */
-void User::showUserReservation() {
-    return;
+const std::vector<Reservation>& User::getReserveList() const{
+    return reserveList;
 }
 
-/**
- * @param res
- * @return void
- */
-void User::addReservation(Reservation& res) {
-    return;
+void User::addReservation(const Reservation& reservation) {
+    reserveList.push_back(reservation);
+    std::cout << "예약 번호 : " << reservation.getReservationId() << " 로 예매 내역 추가";
 }
 
-/**
- * @param reservationId
- * @return void
- */
 void User::cancelReservation(int reservationId) {
-    return;
-}
-
-/**
- * @return vector<Reservation>
- */
-std::vector<Reservation> User::getReserveList() {
-    return {};
-}
-
-/**
- * @param list
- * @return void
- */
-void User::setReserveList(std::vector<Reservation> list) {
-    return;
+    for(auto it = reserveList.begin(); it != reserveList.end(); it++){
+        if(it -> getReservationId() == reservationId){
+            reserveList.erase(it);
+        }
+    }
 }
 
 /**
  * @return bool
  */
 bool User::getAdmin() {
-    return false;
+    return this -> isAdmin;
 }

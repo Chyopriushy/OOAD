@@ -7,29 +7,20 @@
 #define _THEATER_H
 
 #include "Seat.h"
-#include <vector>
 
 class Theater {
-public: 
-    
-int getRow();
-    
-int getColumn();
-    
-std::vector<Seat> getSeatLayer();
-    
-int getTheaterNumber();
-    
-/**
- * @param seatLayer
- */
-void setSeatLayer(std::vector<Seat> seatLayer);
-    
-std::vector<Seat> showAvailabeSeats();
+public:
+    Theater();
+    Theater(int row, int column, int theaterNumber);
+    ~Theater();
+    int getRow();
+    int getColumn();
+    int getTheaterNumber();
+
+
 private: 
     int row;
     int column;
-    std::vector<Seat> seatLayer;
     int theaterNumber;
 };
 

@@ -5,28 +5,38 @@
 
 #include "Movie.h"
 
-/**
- * Movie implementation
- */
+Movie::Movie() {
+    this -> title = "unknown";
+    this -> genre = "unknown";
+    this -> duration = 0;
+}
 
+Movie::Movie(std::string title, std::string genre, int duration) {
+    this -> title = title;
+    this -> genre = genre;
+    this -> duration = duration;
+}
+
+Movie::~Movie() {}
 
 /**
  * @return String
  */
 std::string Movie::getTitle() {
-    return "";
+    return this -> title;
 }
 
 /**
  * @return String
  */
 std::string Movie::getGenre() {
-    return "";
+    return this -> genre;
 }
 
 /**
  * @return Integer
  */
 int Movie::getDuration() {
-    return 0;
+    return this -> duration;
 }
+

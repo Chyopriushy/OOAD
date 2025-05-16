@@ -71,5 +71,5 @@ void ReservationSystem::addBalance() {
  * @return void
  */
 void ReservationSystem::showMainMenu() {
-    std::cout << 0;
+
 }
